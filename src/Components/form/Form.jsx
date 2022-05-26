@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 import CalendarImg from "../../Assets/Images/fi_calendar.png";
 import UserImg from "../../Assets/Images/fi_users.png";
@@ -11,7 +11,8 @@ import {
 	Button,
 } from "react-bootstrap";
 
-const FormComp = () => {
+const FormComp = ({ getCarsData }) => {
+	const [form, setForm] = useState([]);
 	return (
 		<section className="form-section">
 			<div className="container">
@@ -28,8 +29,15 @@ const FormComp = () => {
 										aria-label="Select driver"
 										id="driver"
 										required
+										defaultValue={""}
+										onChange={(e) =>
+											setForm({
+												...form,
+												driver: e.target.value,
+											})
+										}
 									>
-										<option defaultChecked disabled>
+										<option disabled value="">
 											Pilih Tipe Driver
 										</option>
 										<option value="true">
@@ -53,6 +61,12 @@ const FormComp = () => {
 											aria-label="Date"
 											id="datePickerId"
 											required
+											onChange={(e) =>
+												setForm({
+													...form,
+													date: e.target.value,
+												})
+											}
 										/>
 										<InputGroup.Text>
 											<img
@@ -64,16 +78,23 @@ const FormComp = () => {
 								</Form.Group>
 							</Col>
 							<Col>
-								<Form.Label htmlFor="jam">
+								<Form.Label htmlFor="hour">
 									Waktu Jemput/Ambil
 								</Form.Label>
 								<Form.Select
 									className="form-control"
 									aria-label="Waktu jemput"
-									id="jam"
+									id="hour"
+									defaultValue={""}
 									required
+									onChange={(e) =>
+										setForm({
+											...form,
+											hour: e.target.value,
+										})
+									}
 								>
-									<option defaultChecked disabled>
+									<option disabled value="">
 										Pilih Waktu
 									</option>
 									<option value="8">08.00 WIB</option>
@@ -85,15 +106,20 @@ const FormComp = () => {
 							</Col>
 							<Col>
 								<Form.Group>
-									<Form.Label htmlFor="penumpang">
+									<Form.Label htmlFor="capacity">
 										Jumlah Penumpang (optional)
 									</Form.Label>
 									<InputGroup className="input-group">
 										<FormControl
 											className="penumpang"
 											aria-label="Jumlah penumpang"
-											id="penumpang"
-											required
+											id="capacity"
+											onChange={(e) =>
+												setForm({
+													...form,
+													capacity: e.target.value,
+												})
+											}
 										/>
 										<InputGroup.Text>
 											<img src={UserImg} alt="User" />
@@ -101,11 +127,15 @@ const FormComp = () => {
 									</InputGroup>
 								</Form.Group>
 							</Col>
-							<Col md={1} className="button-wrap d-flex align-items-end">
+							<Col
+								md={1}
+								className="button-wrap d-flex align-items-end"
+							>
 								<Button
 									className="main__button font-weight-bold border-0"
 									variant="success"
 									type="button"
+									onClick={() => getCarsData(form)}
 								>
 									Cari Mobil
 								</Button>
