@@ -7,7 +7,7 @@ function Button(props) {
 		<NavLink
 			className="fw-bold border-0 btn btn-success"
 			to={props.to}
-			exact={true}
+			exact="true"
 		>
 			{props.text}
 		</NavLink>

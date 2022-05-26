@@ -15,7 +15,7 @@ const Cta = () => {
 						sed do eiusmod tempor incididunt ut labore et dolore
 						magna aliqua.
 					</p>
-					<Button to="/cars" text="Mulai Sewa Mobil" />
+					<a href="/cars">Mulai Sewa Mobil</a>
 				</div>
 			</div>
 		</section>

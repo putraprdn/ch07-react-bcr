@@ -37,7 +37,7 @@ const NavbarComp = () => {
 							>
 								FAQ
 							</Nav.Link>
-							<Button to="/register" text="Register" />
+							<Button to="/cars" text="Register" />
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

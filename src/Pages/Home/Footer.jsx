@@ -5,6 +5,7 @@ import Instagram from "../../Assets/Images/instagram.png";
 import Twitter from "../../Assets/Images/twitter.png";
 import Mail from "../../Assets/Images/mail.png";
 import Twitch from "../../Assets/Images/twitch.png";
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
 	const links = [
@@ -73,7 +74,7 @@ const Footer = () => {
 
 					<div className="col">
 						<p className="paragraph">Copyright Binar 2022</p>
-						<a className="nav-logo"></a>
+						<NavLink to='/' className="nav-logo" exact="true"></NavLink>
 					</div>
 				</div>
 			</div>
