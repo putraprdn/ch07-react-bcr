@@ -9,16 +9,20 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 
 const CarCard = ({ cars }) => {
 	// let textClass;
-    // // console.log(totalProps);
-	// if (cars == null) {
-    //     textClass = "d-none";
+	// if (cars === "kosong") {
+	// 	textClass = "d-block text-center";
+	// 	console.log(cars);
 	// 	cars = [];
-    //     var totalProps = cars.reduce((a, obj) => a + Object.keys(obj).length, 0);
+	// }
+	// else {
+	// 	textClass = "d-none";
+
+	// }
+	//     var totalProps = cars.reduce((a, obj) => a + Object.keys(obj).length, 0);
 	// 	console.log(totalProps);
 	// } else if (totalProps < 1 && cars !== null) {
 	// 	textClass = "d-block text-center";
 	// 	// cars = [];
-	// 	console.log("ADAWDAWDAWd");
 	// }
 
 	return (

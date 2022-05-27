@@ -54,19 +54,19 @@ const Footer = () => {
 					<div className="col">
 						<p className="paragraph">Connect with us</p>
 						<div className="footer__icon-wrap d-flex">
-							<a href="javascript:;">
+							<a href="#">
 								<img src={Facebook} alt="Facebook Icon" />
 							</a>
-							<a href="javascript:;">
+							<a href="#">
 								<img src={Instagram} alt="Instagram Icon" />
 							</a>
-							<a href="javascript:;">
+							<a href="#">
 								<img src={Twitter} alt="Twitter Icon" />
 							</a>
-							<a href="javascript:;">
+							<a href="#">
 								<img src={Mail} alt="Mail Icon" />
 							</a>
-							<a href="javascript:;">
+							<a href="#">
 								<img src={Twitch} alt="Twitch Icon" />
 							</a>
 						</div>

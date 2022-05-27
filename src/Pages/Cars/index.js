@@ -7,8 +7,8 @@ import CarCard from "../../Components/car-card/Card";
 import axios from "axios";
 
 const Cars = () => {
-	const [refetch, setRefetch] = useState([]),
-		[cars, setCars] = useState([]);
+	const [cars, setCars] = useState([]);
+	// [click, setClick] = useState(false);
 
 	const getCarsData = async (form) => {
 		try {
@@ -31,13 +31,12 @@ const Cars = () => {
 				}
 			});
 			setCars(FilteredDatas);
-			// if(cars)
-			console.log(cars.reduce((a, obj) => a + Object.keys(obj).length, 0));
+			// setClick(true);
+			// console.log(click);
 		} catch (err) {
 			console.log(err);
 		}
 	};
-	useEffect(() => getCarsData, [refetch]);
 	return (
 		<div>
 			<NavbarComp />

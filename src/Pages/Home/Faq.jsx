@@ -39,9 +39,9 @@ const Faq = () => {
 						</p>
 					</div>
 					<div className="col">
-						{questions.map((question, index) => (
-							<Accordion defaultActiveKey={index} alwaysOpen>
-								<Accordion.Item key={index}>
+						<Accordion alwaysOpen>
+							{questions.map((question, index) => (
+								<Accordion.Item key={index} eventKey={index}>
 									<Accordion.Header className="paragraph">
 										{question.title}
 									</Accordion.Header>
@@ -49,8 +49,8 @@ const Faq = () => {
 										{question.body}
 									</Accordion.Body>
 								</Accordion.Item>
-							</Accordion>
-						))}
+							))}
+						</Accordion>
 					</div>
 				</div>
 			</div>

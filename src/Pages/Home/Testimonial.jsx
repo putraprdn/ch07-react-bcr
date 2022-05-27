@@ -60,7 +60,7 @@ const Testimonial = () => {
 					className="mySwiper"
 				>
 					{testimonials.map((testimonial, index) => (
-						<SwiperSlide>
+						<SwiperSlide key={index}>
 							<div className="item d-flex align-items-center">
 								<div className="image-wrap">
 									<img src={testimonial.photo} alt="" />

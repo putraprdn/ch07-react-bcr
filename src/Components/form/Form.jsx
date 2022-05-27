@@ -17,7 +17,11 @@ const FormComp = ({ getCarsData }) => {
 		<section className="form-section">
 			<div className="container">
 				<div className="form-container mx-auto">
-					<Form className="form-row" id="form">
+					<Form
+						className="form-row"
+						id="form"
+						onSubmit={(e) => {e.preventDefault(); getCarsData(form)}}
+					>
 						<Row>
 							<Col>
 								<Form.Group>
@@ -28,14 +32,14 @@ const FormComp = ({ getCarsData }) => {
 										className="form-control"
 										aria-label="Select driver"
 										id="driver"
-										required
-										defaultValue={""}
 										onChange={(e) =>
 											setForm({
 												...form,
 												driver: e.target.value,
 											})
 										}
+										defaultValue={""}
+										required
 									>
 										<option disabled value="">
 											Pilih Tipe Driver
@@ -60,13 +64,13 @@ const FormComp = ({ getCarsData }) => {
 											type="date"
 											aria-label="Date"
 											id="datePickerId"
-											required
 											onChange={(e) =>
 												setForm({
 													...form,
 													date: e.target.value,
 												})
 											}
+											required
 										/>
 										<InputGroup.Text>
 											<img
@@ -134,8 +138,8 @@ const FormComp = ({ getCarsData }) => {
 								<Button
 									className="main__button font-weight-bold border-0"
 									variant="success"
-									type="button"
-									onClick={() => getCarsData(form)}
+									type="submit"
+									// onClick={(e) => getCarsData(form)}
 								>
 									Cari Mobil
 								</Button>
